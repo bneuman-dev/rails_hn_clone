@@ -4,5 +4,7 @@
   <% if post.creator.id.to_s == session[:user_id].to_s %>
     <%= link_to 'Delete this post', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
   <% end %>
+  <%= link_to "Upvote this post", {controller: 'post_votes', action: 'create', post_id: post.id}, {method: 'post'} %>
   <br><br>
+  <%= "#{post.vote_count}" %>
 </p>

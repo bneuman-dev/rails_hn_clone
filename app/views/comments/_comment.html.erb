@@ -1,0 +1,10 @@
+<% unless comment.id.nil? %>
+<p>
+  <%= comment.content %><br>
+  <%= comment.author.email %>
+  <% if session[:user_id].to_s == comment.author.id.to_s %>
+    <%= link_to "Delete comment", [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+  </p>
+<% end %>
