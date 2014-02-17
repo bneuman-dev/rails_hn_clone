@@ -24,7 +24,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = User.find(params[:id])
+    @your_home_page = (params[:id].to_s == session[:user_id].to_s)
+    @posts = @user.posts
   end
 
   def destroy

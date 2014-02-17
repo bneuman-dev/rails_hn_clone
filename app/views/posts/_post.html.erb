@@ -1,0 +1,8 @@
+<p>
+  <%=link_to "#{post.title}", "http://#{post.url}" %><br>
+  <%= link_to "#{post.creator.email}", user_path(post.creator) %>&nbsp;
+  <% if post.creator.id.to_s == session[:user_id].to_s %>
+    <%= link_to 'Delete this post', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+  <br><br>
+</p>

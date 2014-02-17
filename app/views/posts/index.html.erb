@@ -1,7 +1,1 @@
-<% @posts.each do |post| %>
-  <p>
-    <%=link_to "#{post.title}", "http://#{post.url}" %><br>
-    <%= link_to "#{post.creator.email}", user_path(post.creator) %>
-    <br><br>
-  </p>
-<% end %>
+<%= render @posts %>

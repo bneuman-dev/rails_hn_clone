@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(title: params[:post][:title], url: params[:post][:url], creator_id: session[:id])
+    Post.create(title: params[:post][:title], url: params[:post][:url], creator_id: session[:user_id])
     redirect_to posts_path
   end
 
@@ -19,5 +19,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id]).destroy
+    redirect_to posts_path
   end
 end
