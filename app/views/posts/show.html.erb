@@ -1,1 +1,10 @@
 <%= render 'post', post: @post %>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :content, "Your comment:" %>
+    <%= f.text_area :content %>
+  </p>
+  <%= f.submit "Leave comment!" %>
+<% end %>
+
+<%= render @comments %>

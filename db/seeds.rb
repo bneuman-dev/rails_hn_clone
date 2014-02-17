@@ -16,3 +16,9 @@ User.all.each do |user|
   end
 end
 
+Post.all.each do |post|
+  10.times do
+    user = User.find(rand(1..User.all.length))
+    post.comments.create(content: Faker::Company.bs, author: user)
+  end
+end
