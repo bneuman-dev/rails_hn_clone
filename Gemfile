@@ -35,6 +35,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Use faker gem for seeding
+gem 'faker'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
