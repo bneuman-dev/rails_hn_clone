@@ -1,0 +1,5 @@
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
+<h2>Welcome to the hacker news clone</h2>
+<%= session.to_json %>
